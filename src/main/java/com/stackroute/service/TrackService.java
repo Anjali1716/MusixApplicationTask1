@@ -1,6 +1,7 @@
 package com.stackroute.service;
 
 import com.stackroute.domain.Track;
+import com.stackroute.exception.EmptyFieldException;
 import com.stackroute.exception.TrackAlreadyExistsException;
 import com.stackroute.exception.TrackNotExistsException;
 
@@ -12,7 +13,7 @@ public interface TrackService {
 
     public List<Track> displayTracks();
 
-    public Track updateTrack(Track track);
+    public Track updateTrack(Track track) throws EmptyFieldException;
 
     public boolean delTrack(int id) throws TrackNotExistsException;
 }
